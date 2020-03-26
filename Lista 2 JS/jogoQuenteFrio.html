@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Quente ou Frio?</title>
+    <script>
+            var numOrig = Math.floor(Math.random() * 100) + 1;
+            console.log(numOrig);
+        function processar(){
+            var numPlayer = document.getElementById("campoNum");
+            var h2resultado = document.getElementById("resultado");
+            var numPlayer = numPlayer.value;
+
+
+            var numDif = numOrig - numPlayer;
+            var numAbs = Math.abs(numDif);
+            console.log(numAbs);
+
+            if(numAbs>30){
+                var resultado = "Muito frio!";
+                h2resultado.innerHTML=resultado;
+            }
+            else if(numAbs>19){
+                var resultado = "Frio!";
+                h2resultado.innerHTML=resultado;
+            }
+            else if(numAbs>9){
+                var resultado = "Morno!";
+                h2resultado.innerHTML=resultado;
+            }
+            else if(numAbs>2){
+                var resultado = "Quente!";
+                h2resultado.innerHTML=resultado;
+            }
+            else if(numAbs>=1){
+                var resultado = "Pelando!";
+                h2resultado.innerHTML=resultado;
+            }
+            else if(numAbs==0){
+                var resultado = "Parabéns, você acertou! Atualize a página para jogar novamente!";
+                h2resultado.innerHTML=resultado;
+            }
+
+
+        }
+    </script>    
+</head>
+<body>
+    <h1>Jogo Quente ou Frio</h1>
+    <label for="campoNum">Adivinhe um número (1 a 100):</label>
+    <input type="text" class="form-control" id="campoNum" placeholder="Digite um número">
+    <button onclick="processar()">Adivinhar</button>
+
+    <br>
+
+    <h2 id="resultado"></h2>
+
+
+    
+</body>
+</html>

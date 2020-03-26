@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Palíndromo</title>
+    <script>
+        function entradaValida(palavra) {
+        if(palavra.length<3) {
+          alert("Palavra inválida");
+          return 0;
+        }
+        else{
+            return 1;
+        }
+        }
+
+        function verificar(){
+            var campoPalavra = document.getElementById("campoPalavra");
+            var h2resultado = document.getElementById("resultado");
+
+            var palavra = campoPalavra.value;
+            var l = palavra.length;
+            var cont=0;
+            var palavra = palavra.toLowerCase();
+
+            if(entradaValida(palavra)==1){
+                for(var i=0;i<l;i++){
+                    if(palavra[i]!=palavra[l-1-i]){
+                        cont=1;
+                        break;
+                    }
+                }
+                if(cont>0){
+                        var resultado = "Não é Palíndromo";
+                        h2resultado.innerHTML=resultado;
+                    }
+                    else{
+                        var resultado = "É Palíndromo";
+                        h2resultado.innerHTML=resultado;
+                    }
+
+                  
+            }
+
+        }
+    </script>
+</head>
+<body>
+
+<h1>Verificador Palíndromo</h1>
+<label for="campoPalavra">Palavra</label>
+<input type="text" id="campoPalavra" placeholder="Informe uma palavra">
+<button onclick="verificar()">Verificar</button><br>
+
+<h2 id="resultado"></h2>
+    
+</body>
+</html>

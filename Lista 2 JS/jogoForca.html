@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Jogo da Forca</title>
+  <script>
+
+    function inserirPalavra(){
+
+        var palavra = document.getElementById("palavra");
+        var lacunas = document.getElementById("lacunas");
+        
+        pal = palavra.value;
+        pl = pal.length;
+        contader = 0;
+        advec = [];
+        advec.join(" ");
+        contavit = 0;
+
+        inicio.innerHTML=" ";
+
+        var x, y=" ";
+        for(x=0;x<pl;x++){
+             y = y + "_ ";
+        }
+        lacunas.innerHTML = y;
+        var inp = document.createElement("INPUT");
+        inp.setAttribute("placeholder", "Insira uma letra");
+        inp.setAttribute("type", "text");
+        inp.setAttribute("id", "letra");
+        document.body.appendChild(inp);
+        var btn = document.createElement("BUTTON");
+        btn.setAttribute("onclick","jogar()");
+        btn.innerHTML = "Adivinhar";
+        document.body.appendChild(btn);
+    }
+
+    function jogar(){
+
+          var lacunas = document.getElementById("lacunas");
+          var letra = document.getElementById("letra");
+          var msg = document.getElementById("msg");
+          var vidas = document.getElementById("vidas");
+
+          var letra = letra.value;
+          var contador = 0;
+          
+          for(var x=0;x<pl;x++){
+
+            if(pal[x]==letra){
+              contador++;
+              contavit++;
+              advec[x] = letra + " ";
+            }
+            else if(typeof advec[x] === typeof "string");
+            else{
+              advec[x] = "_ "
+            }
+            }
+            lacunas.innerHTML=advec;
+            if(contador>0){
+              msg.innerHTML="Você acertou :)";
+            }
+            if(contavit==pl){
+              document.body.innerHTML="Você ganhou :)";
+            }
+            else if(contador==0){
+              contader++;
+              msg.innerHTML="Você errou :(";
+              if(contader==1){
+                vidas.innerHTML="Você tem 2 vidas"
+              }
+              else if(contader==2){
+                vidas.innerHTML="Você tem 1 vida";
+              }
+              else if(contader==3){
+                document.body.innerHTML="Você perdeu :(";
+              }
+            }
+        }
+    
+  </script>
+</head>
+<body>
+  <div style="font-size: 30px">
+    <div id="vidas">Você tem 3 vidas</div>
+    <div id="lacunas"></div>
+  </div>
+    <div id="inicio">
+        <label for="palavra">Informe uma palavra:</label>
+        <input id="palavra" type="text" placeholder="Insira uma palavra"/>
+        <button onclick="inserirPalavra()">Jogar</button>
+    </div><br>
+    <div id="resultado">
+      <div id="msg"></div>
+    </div>
+  <br>
+</body>
+</html>

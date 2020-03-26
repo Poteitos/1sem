@@ -1,0 +1,74 @@
+.center{
+    text-align:center;
+    float:center;
+}
+body{
+    background-color:black;
+    color:white;
+    font-family:Arial;
+}
+#nome{
+    font-weight:bold;
+    font-size:20;
+}
+.data{
+    font-weight: bold;
+    font-family:Arial;
+    font-size:16
+}
+.inst{
+    font-size:14;
+    font-family:Arial;
+}
+a.link{
+    color:aqua;
+}
+thead{
+    background-color:darkslategray;
+    color:white;
+    font-weight: bold;
+}
+table,th,tr,td{
+    border-collapse: collapse;
+    border: 1px solid white;
+    padding:5px;
+}
+tbody tr:nth-child(odd){
+    background-color:gray;
+}
+tbody tr:nth-child(even){
+    background-color:slategray;
+}
+a:link{
+    text-decoration: none;
+    color:navy;
+}
+#foto{
+    float:right;
+}
+nav ul li{
+    display:inline;
+    padding:5px;
+    border:red solid 1px;
+    background-color:maroon;
+    margin:3px;
+}
+nav ul li a{
+    color:aqua;
+    text-decoration: none;
+
+}
+.menu-item{
+    font-size:14px;
+    text-decoration: none;
+    color:linen;
+}
+.menu-item:hover{
+    font-size:18px;
+    font-weight:bold;
+    text-decoration: none;
+}
+.right{
+    text-align:center;
+    text-decoration: none;
+}

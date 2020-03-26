@@ -1,0 +1,28 @@
+.center{
+    text-align:center;
+}
+body{
+    background-color:black;
+    color:white;
+    font-family:Arial;
+}
+#nome{
+    font-weight:bold;
+    font-size:20;
+}
+#paragrafo{
+    background-color:salmon;
+    color:white;
+}
+.data{
+    font-weight: bold;
+    font-family:Arial;
+    font-size:16
+}
+.inst{
+    font-size:14;
+    font-family:Arial;
+}
+a{
+    color:aqua;
+}
